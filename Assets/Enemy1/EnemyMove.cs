@@ -27,10 +27,10 @@ public class EnemyMove : MonoBehaviour
     {
         dir = (playerTransform.position - transform.position).normalized;
         // animators
-        if (dir.x != 0 && dir.y != 0) animator.SetBool("Moving", true);
-        else animator.SetBool("Moving", false);
-        if (dir.x < 0) animator.SetFloat("playerDirection", 1);
-        else animator.SetFloat("playerDirection", 0);
+        if (dir.x != 0 && dir.y != 0) animator.SetBool("E1Moving", true);
+        else animator.SetBool("E1Moving", false);
+        if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
+        else animator.SetFloat("E1playerDirection", 0);
         //if (Random.value > 0.998) animator.SetTrigger("Punch");
         //if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Jump");
         if (isJumping.value)
@@ -46,8 +46,8 @@ public class EnemyMove : MonoBehaviour
         }
         if (!isJumping.value)
         {
-            animator.SetBool("JumpDone", false);
-            animator.SetBool("JumpUp", false);
+            animator.SetBool("E1JumpDone", false);
+            animator.SetBool("E1JumpUp", false);
         }
     }
     private void FixedUpdate()
@@ -57,11 +57,11 @@ public class EnemyMove : MonoBehaviour
         if (isJumping.value)
         {
             if (notJumping.value) rb.AddForce(Vector2.up * 5000 * Time.fixedDeltaTime);
-            if (transform.position.y > pos.value.y + 1) animator.SetBool("JumpUp", true); 
+            if (transform.position.y > pos.value.y + 1) animator.SetBool("E1JumpUp", true); 
             if (isUp.value) rb.AddForce(Vector2.down * 5000 * Time.fixedDeltaTime);
             if (transform.position.y < pos.value.y + p)
             {
-                animator.SetBool("JumpDone", true);
+                animator.SetBool("E1JumpDone", true);
             }
         }
     }
