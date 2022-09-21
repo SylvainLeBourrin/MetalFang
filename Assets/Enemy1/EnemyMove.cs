@@ -32,7 +32,7 @@ public class EnemyMove : MonoBehaviour
         if (dir.x < 0) animator.SetFloat("playerDirection", 1);
         else animator.SetFloat("playerDirection", 0);
         //if (Random.value > 0.998) animator.SetTrigger("Punch");
-        if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Jump");
+        //if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Jump");
         if (isJumping.value)
         {
             /*if (notJumping.value) transform.position += Vector3.up * jumpForce;
@@ -52,13 +52,13 @@ public class EnemyMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = dir * speed;
+        rb.velocity = dir * speed * Time.fixedDeltaTime;
         if (isDamage.value || isJumping.value || isPunching.value) rb.velocity = Vector2.zero;
         if (isJumping.value)
         {
-            if (notJumping.value) rb.AddForce(Vector2.up * 100);
+            if (notJumping.value) rb.AddForce(Vector2.up * 5000 * Time.fixedDeltaTime);
             if (transform.position.y > pos.value.y + 1) animator.SetBool("JumpUp", true); 
-            if (isUp.value) rb.AddForce(Vector2.down * 100);
+            if (isUp.value) rb.AddForce(Vector2.down * 5000 * Time.fixedDeltaTime);
             if (transform.position.y < pos.value.y + p)
             {
                 animator.SetBool("JumpDone", true);
