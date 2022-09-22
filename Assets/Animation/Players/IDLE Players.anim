@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle_Right
+  m_Name: IDLE Players
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -26,11 +26,7 @@ AnimationClip:
     - time: 0.033333335
       value: {fileID: 1949195028, guid: 41117c99b451d4c2e80c29c12bb89370, type: 3}
     - time: 0.05
-<<<<<<< HEAD:Assets/Animation/Players/Idle_Right.anim
-      value: {fileID: -683262682, guid: 41117c99b451d4c2e80c29c12bb89370, type: 3}
-=======
       value: {fileID: 919211958, guid: 41117c99b451d4c2e80c29c12bb89370, type: 3}
->>>>>>> fc0fdad161a517073f1890c8002f09a52b60ffb6:Assets/Animation/Players/IDLE Players.anim
     - time: 0.06666667
       value: {fileID: -1158287348, guid: 41117c99b451d4c2e80c29c12bb89370, type: 3}
     - time: 0.083333336
