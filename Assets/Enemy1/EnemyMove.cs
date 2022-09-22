@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour
     public float speed;
     Rigidbody2D rb;
     public Transform playerTransform;
+    Vector2 range;
     Vector2 dir;
     public Animator animator;
     public Boal isJumping;
@@ -24,7 +25,8 @@ public class EnemyMove : MonoBehaviour
     }
     private void Update()
     {
-        dir = (playerTransform.position - transform.position).normalized;
+        range = playerTransform.position - transform.position; 
+        dir = range.normalized;
         // animators
         if (dir.x != 0 || dir.y != 0) animator.SetBool("E1Moving", true);
         else animator.SetBool("E1Moving", false);
@@ -33,9 +35,8 @@ public class EnemyMove : MonoBehaviour
             if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
             else animator.SetFloat("E1playerDirection", 0);
         }
-        if (Input.GetButton("Fire2")) animator.SetBool("E1Punch", true);
+        if (Mathf.Abs(range.x) < 1.5f && Mathf.Abs(range.y) < 1.5f && Random.value < 0.9) animator.SetBool("E1Punch", true);
         else animator.SetBool("E1Punch", false);
-        //if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Jump");
         if (!isJumping.value)
         {
             animator.SetBool("E1JumpDone", false);
@@ -46,6 +47,7 @@ public class EnemyMove : MonoBehaviour
     {
         rb.velocity = dir * speed * Time.fixedDeltaTime;
         if (isDamage.value || isJumping.value || isPunching.value) rb.velocity = Vector2.zero;
+        //Jumping cba
         if (isJumping.value)
         {
             if (notJumping.value) rb.AddForce(Vector2.up * 5000 * Time.fixedDeltaTime);
