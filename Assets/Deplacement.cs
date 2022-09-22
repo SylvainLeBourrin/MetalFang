@@ -9,23 +9,14 @@ public class Deplacement : MonoBehaviour
     public float Speed = 20f;
     float Hx;
     float Vy;
-    Animator animator;
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
     void Update()
     {
         Hx = Input.GetAxis("Horizontal");
         Vy = Input.GetAxis("Vertical");
         Move = new Vector3(Hx, Vy, 0);
-        if (Hx < 0) animator.SetFloat("playerDirection", 1);
-        else animator.SetFloat("playerDirection", 0);
     }
     void FixedUpdate()
     {
-        rb.velocity = Move * Speed * Time.fixedDeltaTime;
-        if (rb.velocity.x != 0 || rb.velocity.y != 0) animator.SetBool("Moving", true);
-        else animator.SetBool("Moving", false);
+        rb.velocity = Move * Speed * Time.fixedDeltaTime;  
     }
 }
