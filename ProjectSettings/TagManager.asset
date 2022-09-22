@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TakeMe
   - Punch
+  - HurtBox
   layers:
   - Default
   - TransparentFX

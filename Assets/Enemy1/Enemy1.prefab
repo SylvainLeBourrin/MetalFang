@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5809001314116202164}
   m_Layer: 0
   m_Name: PunchCollider
-  m_TagString: Untagged
+  m_TagString: HurtBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +169,6 @@ MonoBehaviour:
   isUp: {fileID: 11400000, guid: 73837c3d013136441ae9723fb2f0f2d1, type: 2}
   notJumping: {fileID: 11400000, guid: ca09105d0ae14c34f987f97c33402125, type: 2}
   pos: {fileID: 11400000, guid: a15a90400ce14e948b08836480c63e55, type: 2}
-  p: 0
 --- !u!95 &8671995385052196142
 Animator:
   serializedVersion: 4

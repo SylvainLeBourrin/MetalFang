@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 145533388102396501}
   - component: {fileID: 2179498264070786611}
   - component: {fileID: 4765484781670513114}
+  - component: {fileID: 4737056946481984426}
   m_Layer: 0
   m_Name: Players-Prefab
   m_TagString: Player
@@ -197,7 +198,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004807759, y: -0.18750343}
+  m_Offset: {x: 0.0048077554, y: -0.043858707}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -208,7 +209,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16344583, y: 0.10575271}
+  m_Size: {x: 0.28656983, y: 0.39304215}
   m_EdgeRadius: 0
 --- !u!95 &145533388102396501
 Animator:
@@ -256,3 +257,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   can: {fileID: 0}
   placement: {x: 0, y: 0, z: 0}
+--- !u!114 &4737056946481984426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928316409840386099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a29a76a1938774596bbaabb0efe7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

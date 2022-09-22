@@ -33,7 +33,8 @@ public class EnemyMove : MonoBehaviour
             if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
             else animator.SetFloat("E1playerDirection", 0);
         }
-        //if (Random.value > 0.998) animator.SetTrigger("Punch");
+        if (Input.GetButton("Fire2")) animator.SetBool("E1Punch", true);
+        else animator.SetBool("E1Punch", false);
         //if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Jump");
         if (!isJumping.value)
         {
