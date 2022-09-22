@@ -16,7 +16,6 @@ public class EnemyMove : MonoBehaviour
     public Boal isUp;
     public Boal notJumping;
     public Pos pos;
-    public float p;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,23 +26,15 @@ public class EnemyMove : MonoBehaviour
     {
         dir = (playerTransform.position - transform.position).normalized;
         // animators
-        if (dir.x != 0 && dir.y != 0) animator.SetBool("E1Moving", true);
+        if (dir.x != 0 || dir.y != 0) animator.SetBool("E1Moving", true);
         else animator.SetBool("E1Moving", false);
-        if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
-        else animator.SetFloat("E1playerDirection", 0);
+        if (!isDamage.value && !isJumping.value && !isPunching.value)
+        {
+            if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
+            else animator.SetFloat("E1playerDirection", 0);
+        }
         //if (Random.value > 0.998) animator.SetTrigger("Punch");
         //if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Jump");
-        if (isJumping.value)
-        {
-            /*if (notJumping.value) transform.position += Vector3.up * jumpForce;
-            if (transform.position.y > pos.value.y + 1) animator.SetBool("JumpUp", true);
-            if (isUp.value) transform.position += Vector3.down * jumpForce;
-            if (transform.position.y < pos.value.y)
-            {
-                animator.SetBool("JumpDone", true);
-                animator.SetBool("JumpUp", false);
-            }*/
-        }
         if (!isJumping.value)
         {
             animator.SetBool("E1JumpDone", false);
@@ -59,7 +50,7 @@ public class EnemyMove : MonoBehaviour
             if (notJumping.value) rb.AddForce(Vector2.up * 5000 * Time.fixedDeltaTime);
             if (transform.position.y > pos.value.y + 1) animator.SetBool("E1JumpUp", true); 
             if (isUp.value) rb.AddForce(Vector2.down * 5000 * Time.fixedDeltaTime);
-            if (transform.position.y < pos.value.y + p)
+            if (transform.position.y < pos.value.y)
             {
                 animator.SetBool("E1JumpDone", true);
             }

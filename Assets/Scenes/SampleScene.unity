@@ -442,7 +442,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 524950723797704630, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+    - target: {fileID: 329276077262081620, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_Name
+      value: PunchCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 329276077262081620, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_TagString
+      value: Punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795816366352987935, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3910222
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795816366352987935, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_Size.y
+      value: 0.20997486
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795816366352987935, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795816366352987935, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.3044889
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795816366352987935, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03291775
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113877245882342135, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113877245882342135, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113877245882342135, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765484781670513114, guid: 210c5bf45a356004baef4964b15f60b5, type: 3}
       propertyPath: can
       value: 
       objectReference: {fileID: 1026816331}

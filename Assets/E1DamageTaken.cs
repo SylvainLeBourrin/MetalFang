@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Punch : MonoBehaviour
+public class E1DamageTaken : MonoBehaviour
 {
     Animator animator;
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetButton("Fire1"))
+        if (collision.CompareTag("Punch"))
         {
-            animator.SetBool("Punch", true);
+            animator.SetTrigger("E1Dead");
         }
-        else animator.SetBool("Punch", false);
     }
 }

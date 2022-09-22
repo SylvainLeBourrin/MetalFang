@@ -10,6 +10,7 @@ public class Deplacement : MonoBehaviour
     float Hx;
     float Vy;
     Animator animator;
+    float orientation;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -19,7 +20,8 @@ public class Deplacement : MonoBehaviour
         Hx = Input.GetAxis("Horizontal");
         Vy = Input.GetAxis("Vertical");
         Move = new Vector3(Hx, Vy, 0);
-        if (Hx < 0) animator.SetFloat("playerDirection", 1);
+        if (Hx != 0) orientation = Hx;
+        if (orientation < 0) animator.SetFloat("playerDirection", 1);
         else animator.SetFloat("playerDirection", 0);
     }
     void FixedUpdate()
