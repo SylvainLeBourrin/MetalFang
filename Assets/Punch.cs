@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Punch : MonoBehaviour
 {
-    Animator animator;
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
+    public Animator animator;
     private void Update()
     {
         if (Input.GetButton("Fire1"))

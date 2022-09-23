@@ -23,10 +23,15 @@ public class EnemyMove : MonoBehaviour
         isJumping.value = isDamage.value = isPunching.value = isUp.value = false;
         pos.value = Vector3.zero;
     }
+    private void Start()
+    {
+        //playerTransform = GameObject.Find("Player").transform;
+    }
     private void Update()
     {
         range = playerTransform.position - transform.position; 
         dir = range.normalized;
+
         // animators
         if (dir.x != 0 || dir.y != 0) animator.SetBool("E1Moving", true);
         else animator.SetBool("E1Moving", false);

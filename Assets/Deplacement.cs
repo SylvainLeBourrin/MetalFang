@@ -9,12 +9,8 @@ public class Deplacement : MonoBehaviour
     public float Speed = 20f;
     float Hx;
     float Vy;
-    Animator animator;
+    public Animator animator;
     float orientation;
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
     void Update()
     {
         Hx = Input.GetAxis("Horizontal");
