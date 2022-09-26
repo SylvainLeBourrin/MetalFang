@@ -7,25 +7,25 @@ public class EnemyMove : MonoBehaviour
 {
     public float speed;
     Rigidbody2D rb;
-    public Transform playerTransform;
+    Transform playerTransform;
     Vector2 range;
     Vector2 dir;
     public Animator animator;
     public Boal isJumping;
-    public Boal isPunching;
-    public Boal isDamage;
+    bool isPunching;
+    bool isDamage;
     public Boal isUp;
     public Boal notJumping;
     public Pos pos;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        isJumping.value = isDamage.value = isPunching.value = isUp.value = false;
+        isJumping.value = isDamage = isPunching = isUp.value = false;
         pos.value = Vector3.zero;
     }
     private void Start()
     {
-        //playerTransform = GameObject.Find("Player").transform;
+        playerTransform = GameObject.Find("Movement").transform;
     }
     private void Update()
     {
@@ -35,13 +35,21 @@ public class EnemyMove : MonoBehaviour
         // animators
         if (dir.x != 0 || dir.y != 0) animator.SetBool("E1Moving", true);
         else animator.SetBool("E1Moving", false);
-        if (!isDamage.value && !isJumping.value && !isPunching.value)
+        if (!isDamage && !isJumping.value && !isPunching)
         {
             if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
             else animator.SetFloat("E1playerDirection", 0);
         }
-        if (Mathf.Abs(range.x) < 1.5f && Mathf.Abs(range.y) < 1.5f && Random.value < 0.9) animator.SetBool("E1Punch", true);
-        else animator.SetBool("E1Punch", false);
+        if (Mathf.Abs(range.x) < 1.5f && Mathf.Abs(range.y) < 1.5f && Random.value < 0.9)
+        {
+            animator.SetBool("E1Punch", true);
+            isPunching = true;
+        }
+        else
+        {
+            animator.SetBool("E1Punch", false);
+            isPunching = false;
+        }
         if (!isJumping.value)
         {
             animator.SetBool("E1JumpDone", false);
@@ -51,7 +59,7 @@ public class EnemyMove : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = dir * speed * Time.fixedDeltaTime;
-        if (isDamage.value || isJumping.value || isPunching.value) rb.velocity = Vector2.zero;
+        if (isDamage || isJumping.value || isPunching) rb.velocity = Vector2.zero;
         //Jumping cba
         if (isJumping.value)
         {

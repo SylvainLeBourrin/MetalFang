@@ -8,7 +8,7 @@ public class StateDamage : StateMachineBehaviour
     public Boal isJumping;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        isDamage.value = true;
+        //isDamage.value = true;
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

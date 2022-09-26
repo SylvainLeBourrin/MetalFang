@@ -69,7 +69,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path: Colliders/ColliderBody
     classID: 61
     script: {fileID: 0}
   m_PPtrCurves:
@@ -96,7 +96,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 927340611
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 61
@@ -188,7 +188,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path: Colliders/ColliderBody
     classID: 61
     script: {fileID: 0}
   m_EulerEditorCurves: []

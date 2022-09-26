@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DispawnEnemy1 : StateMachineBehaviour
+public class PlayerDead : StateMachineBehaviour
 {
-    public VarByte numberDead;
+    public Boal pDead;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Destroy(animator.gameObject);
-        numberDead.value++;
+        pDead.value = true;
     }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

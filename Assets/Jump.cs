@@ -43,6 +43,5 @@ public class Jump : MonoBehaviour
             jumpTimer = 0;
             isJumping = false;
         }
-        Debug.Log(isJumping);
     }
 }

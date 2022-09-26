@@ -11,10 +11,18 @@ public class Deplacement : MonoBehaviour
     float Vy;
     public Animator animator;
     float orientation;
+    public Boal pDead;
+    private void Awake()
+    {
+        pDead.value = false;
+    }
     void Update()
     {
-        Hx = Input.GetAxis("Horizontal");
-        Vy = Input.GetAxis("Vertical");
+        if (!pDead.value)
+        {
+            Hx = Input.GetAxis("Horizontal");
+            Vy = Input.GetAxis("Vertical");
+        }
         Move = new Vector3(Hx, Vy, 0);
         if (Hx != 0) orientation = Hx;
         if (orientation < 0) animator.SetFloat("playerDirection", 1);

@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class DamageTaken : MonoBehaviour
 {
-    Animator animator;
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
+    public Animator animator;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("HurtBox"))
