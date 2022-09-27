@@ -11,6 +11,9 @@ public class CameraMove : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = new Vector3 (playerTransform.position.x, playerTransform.position.y, -10);    
+        if (playerTransform.position.x > -2.1f && playerTransform.position.x < 3.1f)
+        {
+            transform.position = new Vector3(playerTransform.position.x, transform.position.y, -10);
+        }
     }
 }

@@ -31,6 +31,7 @@ public class Deplacement : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = Move * Speed * Time.fixedDeltaTime;
+        if (pDead.value) rb.velocity = Vector2.zero;
         if (rb.velocity.x != 0 || rb.velocity.y != 0) animator.SetBool("Moving", true);
         else animator.SetBool("Moving", false);
     }

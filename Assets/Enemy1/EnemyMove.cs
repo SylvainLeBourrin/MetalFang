@@ -40,7 +40,7 @@ public class EnemyMove : MonoBehaviour
             if (dir.x < 0) animator.SetFloat("E1playerDirection", 1);
             else animator.SetFloat("E1playerDirection", 0);
         }
-        if (Mathf.Abs(range.x) < 1.5f && Mathf.Abs(range.y) < 1.5f && Random.value < 0.9)
+        if (Mathf.Abs(range.x) < 1.5f && Mathf.Abs(range.y) < 1.5f && Random.value > 0.99)
         {
             animator.SetBool("E1Punch", true);
             isPunching = true;
